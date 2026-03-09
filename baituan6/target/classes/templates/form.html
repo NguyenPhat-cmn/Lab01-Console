@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8" />
+    <title th:text="${book.id} == null ? 'Thêm Sách' : 'Sửa Sách'">Sách</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: "Arial", sans-serif;
+            background-color: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 15px;
+        }
+        .header h1 {
+            color: #333;
+        }
+        .logout-form {
+            display: inline;
+        }
+        .logout-btn {
+            background: #d32f2f;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .logout-btn:hover {
+            background: #b71c1c;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 30px;
+        }
+        .submit-btn {
+            flex: 1;
+            padding: 12px;
+            background: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-btn:hover {
+            background: #388e3c;
+        }
+        .cancel-btn {
+            flex: 1;
+            padding: 12px;
+            background: #757575;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .cancel-btn:hover {
+            background: #616161;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <h1 th:text="${book.id} == null ? '📚 Thêm Sách' : '📚 Sửa Sách'"></h1>
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <button type="submit" class="logout-btn">Đăng Xuất</button>
+        </form>
+    </div>
+    
+    <form th:action="@{/books}" th:object="${book}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        
+        <div class="form-group">
+            <label for="title">Tiêu Đề</label>
+            <input type="text" th:field="*{title}" id="title" required/>
+        </div>
+        
+        <div class="form-group">
+            <label for="author">Tác Giả</label>
+            <input type="text" th:field="*{author}" id="author" required/>
+        </div>
+        
+        <div class="form-group">
+            <label for="price">Giá</label>
+            <input type="number" step="0.01" th:field="*{price}" id="price" required/>
+        </div>
+        
+        <div class="button-group">
+            <button type="submit" class="submit-btn">💾 Lưu</button>
+            <a th:href="@{/books}" class="cancel-btn">❌ Hủy</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>
