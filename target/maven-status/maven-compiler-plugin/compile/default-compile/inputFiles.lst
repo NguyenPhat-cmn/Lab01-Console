@@ -1,4 +1,23 @@
-D:\my work\J2EE_CT2\small project\src\main\java\com\example\bookmanager\BookManagerApplication.java
-D:\my work\J2EE_CT2\small project\src\main\java\com\example\bookmanager\repository\BookRepository.java
-D:\my work\J2EE_CT2\small project\src\main\java\com\example\bookmanager\controller\BookController.java
-D:\my work\J2EE_CT2\small project\src\main\java\com\example\bookmanager\model\Book.java
+C:\baituan6\src\main\java\com\example\bookmanager\config\SecurityConfig.java
+C:\baituan6\src\main\java\com\example\bookmanager\model\Student.java
+C:\baituan6\src\main\java\com\example\bookmanager\config\DataInitializer.java
+C:\baituan6\src\main\java\com\example\bookmanager\repository\BookRepository.java
+C:\baituan6\src\main\java\com\example\bookmanager\controller\HomeController.java
+C:\baituan6\src\main\java\com\example\bookmanager\controller\LoginController.java
+C:\baituan6\src\main\java\com\example\bookmanager\model\Role.java
+C:\baituan6\src\main\java\com\example\bookmanager\repository\CourseRepository.java
+C:\baituan6\src\main\java\com\example\bookmanager\model\Book.java
+C:\baituan6\src\main\java\com\example\bookmanager\service\CustomUserDetailsService.java
+C:\baituan6\src\main\java\com\example\bookmanager\controller\StudentController.java
+C:\baituan6\src\main\java\com\example\bookmanager\model\Enrollment.java
+C:\baituan6\src\main\java\com\example\bookmanager\model\User.java
+C:\baituan6\src\main\java\com\example\bookmanager\controller\CourseController.java
+C:\baituan6\src\main\java\com\example\bookmanager\repository\StudentRepository.java
+C:\baituan6\src\main\java\com\example\bookmanager\repository\UserRepository.java
+C:\baituan6\src\main\java\com\example\bookmanager\controller\EnrollmentController.java
+C:\baituan6\src\main\java\com\example\bookmanager\model\Course.java
+C:\baituan6\src\main\java\com\example\bookmanager\repository\EnrollmentRepository.java
+C:\baituan6\src\main\java\com\example\bookmanager\BookManagerApplication.java
+C:\baituan6\src\main\java\com\example\bookmanager\config\WebConfig.java
+C:\baituan6\src\main\java\com\example\bookmanager\controller\BookController.java
+C:\baituan6\src\main\java\com\example\bookmanager\repository\RoleRepository.java

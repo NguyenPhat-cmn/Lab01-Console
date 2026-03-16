@@ -14,6 +14,7 @@ public class Book {
     private String title;
     private String author;
     private double price;
+    private String imageUrl;
 
     public Book() {
     }
@@ -22,6 +23,13 @@ public class Book {
         this.title = title;
         this.author = author;
         this.price = price;
+    }
+
+    public Book(String title, String author, double price, String imageUrl) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+        this.imageUrl = imageUrl;
     }
 
     public Long getId() {
@@ -54,5 +62,13 @@ public class Book {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
