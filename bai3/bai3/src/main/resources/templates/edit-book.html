@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<h2>Sửa sách</h2>
+
+<form action="/books/edit" method="post" th:object="${book}">
+    <input type="hidden" th:field="*{id}">
+    Tiêu đề: <input th:field="*{title}"><br>
+    Tác giả: <input th:field="*{author}"><br>
+    <button>Cập nhật</button>
+</form>
+
+</body>
+</html>

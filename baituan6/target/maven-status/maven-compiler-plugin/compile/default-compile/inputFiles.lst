@@ -1,0 +1,12 @@
+C:\baituan5\src\main\java\com\example\bookmanager\model\Role.java
+C:\baituan5\src\main\java\com\example\bookmanager\repository\BookRepository.java
+C:\baituan5\src\main\java\com\example\bookmanager\config\SecurityConfig.java
+C:\baituan5\src\main\java\com\example\bookmanager\controller\LoginController.java
+C:\baituan5\src\main\java\com\example\bookmanager\config\DataInitializer.java
+C:\baituan5\src\main\java\com\example\bookmanager\model\Book.java
+C:\baituan5\src\main\java\com\example\bookmanager\model\User.java
+C:\baituan5\src\main\java\com\example\bookmanager\BookManagerApplication.java
+C:\baituan5\src\main\java\com\example\bookmanager\repository\RoleRepository.java
+C:\baituan5\src\main\java\com\example\bookmanager\service\CustomUserDetailsService.java
+C:\baituan5\src\main\java\com\example\bookmanager\repository\UserRepository.java
+C:\baituan5\src\main\java\com\example\bookmanager\controller\BookController.java

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang chủ</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 120px;
+        }
+
+        .title {
+            font-size: 64px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 22px;
+            color: #f8f9fa;
+        }
+
+        .card {
+            background: white;
+            width: 60%;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: #4e73df;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2e59d9;
+        }
+    </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div th:replace="fragments/header :: siteHeader"></div>
+
+<div class="container">
+    <div class="card">
+        <div class="title" th:text="${message}">Xin chào các bạn</div>
+        <div class="subtitle">Chào mừng bạn đến với website Spring Boot của mình 🚀</div>
+        <a th:href="@{/products}" class="btn">Xem danh sách sản phẩm</a>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<div th:replace="fragments/footer :: siteFooter"></div>
+
+</body>
+</html>
+
+
+
+
+
+

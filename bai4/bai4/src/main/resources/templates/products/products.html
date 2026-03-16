@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Danh sách sản phẩm</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 { margin-bottom: 10px; }
+
+    .top-bar { margin-bottom: 15px; }
+
+    .top-bar a {
+      text-decoration: none;
+      padding: 6px 10px;
+      border: 1px solid #333;
+      border-radius: 3px;
+      font-size: 14px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #999;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th { background: #eee; }
+
+    img { display: block; }
+
+    .actions a {
+      margin-right: 6px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<div th:replace="fragments/header :: header"></div>
+
+<h1>Danh sách sản phẩm</h1>
+
+<div class="top-bar">
+  <a th:href="@{/products/add}">+ Thêm sản phẩm</a>
+</div>
+
+<table>
+  <tr>
+    <th>Hình</th>
+    <th>Tên</th>
+    <th>Loại</th>
+    <th>Giá</th>
+    <th>Hành động</th>
+  </tr>
+
+  <tr th:each="p : ${products}">
+    <td>
+      <img th:if="${p.image != null}"
+           th:src="${p.image}"
+           width="70">
+    </td>
+    <td th:text="${p.name}"></td>
+    <td th:text="${p.category}"></td>
+    <td th:text="${p.price}"></td>
+    <td class="actions">
+      <a th:href="@{'/products/edit/' + ${p.id}}">Sửa</a>
+      <a th:href="@{'/products/delete/' + ${p.id}}"
+         onclick="return confirm('Xóa sản phẩm này?')">delete</a>
+    </td>
+
+  </tr>
+</table>
+
+<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>

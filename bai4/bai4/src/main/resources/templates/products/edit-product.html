@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Sửa sản phẩm</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f4f6;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      background: #fff;
+      margin: 40px auto;
+      padding: 25px 30px;
+      border-radius: 8px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 15px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 6px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    input[type="file"] {
+      padding: 4px;
+    }
+
+    .error {
+      color: red;
+      font-size: 13px;
+      margin-top: 3px;
+    }
+
+    .image-preview {
+      margin-top: 10px;
+    }
+
+    .image-preview img {
+      width: 120px;
+      border: 1px solid #ccc;
+      padding: 4px;
+      border-radius: 4px;
+    }
+
+    .actions {
+      margin-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    button {
+      background: #2563eb;
+      color: white;
+      border: none;
+      padding: 9px 18px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+
+    .back {
+      text-decoration: none;
+      color: #2563eb;
+      font-size: 14px;
+    }
+
+    .back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div th:replace="fragments/header :: siteHeader"></div>
+
+<div class="container">
+
+  <h2>Sửa sản phẩm</h2>
+
+  <form th:action="@{/products/edit}"
+        th:object="${product}"
+        method="post"
+        enctype="multipart/form-data">
+
+    <!-- ID -->
+    <input type="hidden" th:field="*{id}"/>
+
+    <label>Tên sản phẩm</label>
+    <input th:field="*{name}">
+    <div class="error" th:errors="*{name}"></div>
+
+    <label>Loại</label>
+    <select th:field="*{category}">
+      <option value="">-- Chọn --</option>
+      <option value="Laptop">Laptop</option>
+      <option value="Phone">Phone</option>
+    </select>
+    <div class="error" th:errors="*{category}"></div>
+
+    <label>Giá</label>
+    <input type="number" th:field="*{price}">
+    <div class="error" th:errors="*{price}"></div>
+
+    <label>Ảnh mới (nếu muốn đổi)</label>
+    <input type="file" th:field="*{imageFile}">
+
+    <div class="image-preview" th:if="${product.image != null}">
+      <p>Ảnh hiện tại:</p>
+      <img th:src="${product.image}">
+    </div>
+
+    <div class="actions">
+      <button type="submit">💾 Lưu thay đổi</button>
+      <a class="back" th:href="@{/products}">← Quay lại</a>
+    </div>
+  </form>
+
+</div>
+
+<!-- FOOTER -->
+<div th:replace="fragments/footer :: siteFooter"></div>
+
+</body>
+</html>

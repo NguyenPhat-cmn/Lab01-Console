@@ -1,0 +1,26 @@
+<footer th:fragment="siteFooter"
+        style="margin-top:40px;text-align:center;color:#555">
+  © 2025 - Spring Boot
+</footer>
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<header th:fragment="siteHeader">
+  <nav style="
+        background:#1f2937;
+        padding:12px 20px;
+        display:flex;
+        gap:20px;
+    ">
+    <a th:href="@{/}" style="color:white;text-decoration:none">
+      Home
+    </a>
+    <a th:href="@{/products}" style="color:white;text-decoration:none">
+      Products
+    </a>
+  </nav>
+</header>
+
+</body>
+</html>
