@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BaiTap7 - CI/CD Pipeline Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🚀 CI/CD Pipeline với GitLab</h1>
+    <p>BaiTap7 - Deployed via GitLab Pages</p>
+  </header>
+
+  <main>
+    <section class="pipeline-flow">
+      <h2>CI/CD Pipeline Flow</h2>
+      <div class="stages">
+        <div class="stage">
+          <span class="icon">📝</span>
+          <h3>Commit & Push</h3>
+          <p>Developer push code lên GitLab</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="stage">
+          <span class="icon">🔨</span>
+          <h3>Build</h3>
+          <p>Tự động build project</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="stage">
+          <span class="icon">🧪</span>
+          <h3>Test</h3>
+          <p>Chạy automated tests</p>
+        </div>
+        <div class="arrow">→</div>
+        <div class="stage">
+          <span class="icon">🌐</span>
+          <h3>Deploy</h3>
+          <p>Deploy lên GitLab Pages</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="concepts">
+      <h2>Các khái niệm chính</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>CI - Continuous Integration</h3>
+          <p>Tự động build và test mỗi khi push code. Phát hiện lỗi sớm, giảm conflict khi merge.</p>
+        </div>
+        <div class="card">
+          <h3>CD - Continuous Deployment</h3>
+          <p>Tự động deploy sau khi CI pass. Release nhanh, giảm thủ công, feedback sớm.</p>
+        </div>
+        <div class="card">
+          <h3>Runner</h3>
+          <p>Server/container thực thi các jobs. GitLab.com cung cấp shared runners miễn phí.</p>
+        </div>
+        <div class="card">
+          <h3>Artifacts</h3>
+          <p>File output được tạo ra bởi jobs, có thể chia sẻ giữa các stages trong pipeline.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="status">
+      <h2>Pipeline Status</h2>
+      <div id="status-box">
+        <p id="status-text">⏳ Đang kiểm tra...</p>
+        <p id="deploy-time"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Deployed with ❤️ via GitLab CI/CD | BaiTap7</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
